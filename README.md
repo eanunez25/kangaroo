@@ -1,24 +1,11 @@
-# README
+# Kangaroo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+We are currently in a kangaroo market. Kangaroo is an application that will help keep track of options trades by 
+displaying user inputted floors, ceilings, and strikes and measuring how far each price level is from the underlying's current price. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Supported Trades
+- Bear call spreads
+- Bull put spreads
+- Iron condors
+- Selling calls
+- Selling puts
