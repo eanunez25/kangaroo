@@ -24,18 +24,31 @@
       <% else %>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.username %></a>
-            <div class="dropdown-menu" aria-labelledby="dropdown09">
-              <a class="dropdown-item" href="#">Show Trades</a>
-              <a href="#" class="dropdown-item">New Trade</a>
-              <a class="dropdown-item" href="#">Settings</a>
-            </div>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.username %></a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="/trades">Show Trades</a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/trades">All Trades</a></li>
+                          <li class="divider"></li>
+                          <li><a class="dropdown-item" href="/bps">BPS</a></li>
+                          <li><a class="dropdown-item" href="#">BCS</a></li>
+                      </ul>
+                  </li>
+                  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">New Trade</a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">BPS</a></li>
+                      </ul>
+                  </li>
+                  <%# <li><a class="dropdown-item" href="#">Settings</a></li> %>
+              </ul>
           </li>
           <li class="nav-item active">
-            <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-primary"%>
+            <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-primary signup"%>
           </li>
         </ul>
       <% end %>
     </div>
   </nav>
 </div>
+

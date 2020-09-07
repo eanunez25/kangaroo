@@ -5,7 +5,7 @@ class BullPutSpreadsController < ApplicationController
   # GET /bull_put_spreads
   # GET /bull_put_spreads.json
   def index
-    @bull_put_spreads = BullPutSpread.all
+    @bull_put_spreads = current_user.bull_put_spreads.all
   end
 
   # GET /bull_put_spreads/1
