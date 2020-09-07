@@ -1,5 +1,6 @@
 class BullPutSpreadsController < ApplicationController
   before_action :set_bull_put_spread, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /bull_put_spreads
   # GET /bull_put_spreads.json
