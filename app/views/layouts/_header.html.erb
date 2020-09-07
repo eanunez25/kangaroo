@@ -12,10 +12,13 @@
       <% unless user_signed_in? %>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
+            <a class="nav-link" href="/login">About <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
             <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="btn btn-primary" href="/signup">Sign Up <span class="sr-only">(current)</span></a>
+            <a class="btn btn-primary signup" href="/signup">Sign Up <span class="sr-only">(current)</span></a>
           </li>
         </ul>
       <% else %>
@@ -23,9 +26,9 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.username %></a>
             <div class="dropdown-menu" aria-labelledby="dropdown09">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#">Show Trades</a>
+              <a href="#" class="dropdown-item">New Trade</a>
+              <a class="dropdown-item" href="#">Settings</a>
             </div>
           </li>
           <li class="nav-item active">
