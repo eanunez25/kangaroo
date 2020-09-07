@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bull Put Spreads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Floor1</th>
+      <th>Floor2</th>
+      <th>Strike</th>
+      <th>Expiration</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bull_put_spreads.each do |bull_put_spread| %>
+      <tr>
+        <td><%= bull_put_spread.floor1 %></td>
+        <td><%= bull_put_spread.floor2 %></td>
+        <td><%= bull_put_spread.strike %></td>
+        <td><%= bull_put_spread.expiration %></td>
+        <td><%= link_to 'Show', bull_put_spread %></td>
+        <td><%= link_to 'Edit', edit_bull_put_spread_path(bull_put_spread) %></td>
+        <td><%= link_to 'Destroy', bull_put_spread, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bull Put Spread', new_bull_put_spread_path %>

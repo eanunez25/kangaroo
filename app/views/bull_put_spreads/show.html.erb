@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Floor1:</strong>
+  <%= @bull_put_spread.floor1 %>
+</p>
+
+<p>
+  <strong>Floor2:</strong>
+  <%= @bull_put_spread.floor2 %>
+</p>
+
+<p>
+  <strong>Strike:</strong>
+  <%= @bull_put_spread.strike %>
+</p>
+
+<p>
+  <strong>Expiration:</strong>
+  <%= @bull_put_spread.expiration %>
+</p>
+
+<%= link_to 'Edit', edit_bull_put_spread_path(@bull_put_spread) %> |
+<%= link_to 'Back', bull_put_spreads_path %>
