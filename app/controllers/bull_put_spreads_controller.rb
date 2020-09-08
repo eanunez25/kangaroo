@@ -62,6 +62,6 @@ class BullPutSpreadsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bull_put_spread_params
-      params.require(:bull_put_spread).permit(:floor1, :floor2, :strike, :expiration)
+      params.require(:bull_put_spread).permit(:floor1, :floor2, :strike, :expiration, :asset)
     end
 end
