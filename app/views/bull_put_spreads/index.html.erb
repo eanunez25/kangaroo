@@ -37,16 +37,23 @@
   <div class="col text-center">
     <h1>Bull Put Spreads</h1>
     
-    <div class="card-deck">
+    <div class="row">
       <% @bull_put_spreads.each do |bps| %>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><%= bps.strike %></h5>
-            <p class="card-text"><%= bps.floor1 %></p>
-            <p class="card-text"><%= bps.floor2 %></p>
-            <p class="card-text"><%= bps.expiration %></p>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= bps.asset %> <%= bps.strike %></h5>
+              <h6 class="card-subtitle mb-2 text-muted">Floor 1</h6>
+              <p class="card-text"><%= bps.floor1 %></p>
+              <h6 class="card-subtitle mb-2 text-muted">Floor 2</h6>
+              <p class="card-text"><%= bps.floor2 %></p>
+              <h6 class="card-subtitle mb-2 text-muted">DTE</h6>
+              <p class="card-text"><%= bps.expiration %></p>
+              <a href="#" class="btn btn-primary">View</a>
+            </div>
           </div>
         </div>
+
       <% end  %>
     </div>
 
