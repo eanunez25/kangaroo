@@ -1,3 +1,4 @@
+<% provide(:title, "BPS") %>
 <p id="notice"><%= notice %></p>
 
 <h1>Bull Put Spreads</h1>
@@ -31,3 +32,23 @@
 <br>
 
 <%= link_to 'New Bull Put Spread', new_bull_put_spread_path %>
+
+<div class="row">
+  <div class="col text-center">
+    <h1>Bull Put Spreads</h1>
+    
+    <div class="card-deck">
+      <% @bull_put_spreads.each do |bps| %>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= bps.strike %></h5>
+            <p class="card-text"><%= bps.floor1 %></p>
+            <p class="card-text"><%= bps.floor2 %></p>
+            <p class="card-text"><%= bps.expiration %></p>
+          </div>
+        </div>
+      <% end  %>
+    </div>
+
+  </div>
+</div>
