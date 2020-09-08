@@ -1,8 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @bull_put_spreads = current_user.bull_put_spreads.all if user_signed_in? 
   end
 
-  def show_trades
-    @bps = current_user.bull_put_spreads.all 
-  end
 end

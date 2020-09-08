@@ -1,29 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Security:</strong>
-  <%= @bull_put_spread.asset %>
-</p>
+<% title = @bull_put_spread.asset + " " + number_to_currency(@bull_put_spread.strike).to_s %>
+<% provide(:title, title) %>
 
-<p>
-  <strong>Floor1:</strong>
-  <%= @bull_put_spread.floor1 %>
-</p>
-
-<p>
-  <strong>Floor2:</strong>
-  <%= @bull_put_spread.floor2 %>
-</p>
-
-<p>
-  <strong>Strike:</strong>
-  <%= @bull_put_spread.strike %>
-</p>
-
-<p>
-  <strong>Expiration:</strong>
-  <%= @bull_put_spread.expiration %>
-</p>
-
-<%= link_to 'Edit', edit_bull_put_spread_path(@bull_put_spread) %> |
-<%= link_to 'Back', bull_put_spreads_path %>
+<div class="row">
+  <div class="col text-center">
+    <h1><%= title %></h1>
+    <% @floors.each_with_index do |f,i| %>
+      <div class="col text-center"><%= @floor_names[i] %></div>
+      <div class="row">
+        <div class="col-md-6 text-right">
+          <h1><%= number_to_currency(f) %></h1>
+        </div>
+        <div class="col-md-6 text-left">
+          <%= number_to_currency(f-@rut_price) %><br>
+          <%= (((f-@rut_price)/@rut_price)*100).round(2) %>%
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
