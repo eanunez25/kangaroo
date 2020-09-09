@@ -17,6 +17,13 @@
       <h5 class="stats"><%= @bull_put_spread.dte %> <%= 'day'.pluralize(@bull_put_spread.dte.to_i) %></h5>
       <h5 class="stats">(<%= business_days_between(Date.today,@bull_put_spread.expiration) %> trading <%= 'day'.pluralize(@bull_put_spread.dte.to_i) %>)</h5>
   </div>
+</div><br>
+
+<div class="row">
+  <div class="col text-center">
+    <%= link_to "Edit", edit_bull_put_spread_path, class: "btn btn-primary cards" %>
+    <%= link_to "Delete", bull_put_spread_path, class: "btn btn-danger cards", method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
 </div>
 
 <% @floors.each_with_index do |f,i| %>
