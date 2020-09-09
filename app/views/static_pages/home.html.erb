@@ -9,5 +9,14 @@
     </div>
   </div>
 <% else %>
-  <%= render 'shared/show_trades' %>
+  <% if @bull_put_spreads.empty? %>
+    <div class="row">
+      <div class="col text-center">
+        <h1>Welcome to Boing</h1>
+        <p>You have no trades! Create a new trade from the dropdown menu.</p>
+      </div>
+    </div>
+  <% else %>
+    <%= render 'shared/show_trades' %>
+  <% end %>
 <% end %>
