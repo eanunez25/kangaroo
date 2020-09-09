@@ -30,17 +30,19 @@
   <div class="floor">
     <div class="col text-center"><%= @floor_names[i] %></div>
     <div class="row">
-      <div class="col-md-6 text-right">
-        <h1 class="floor"><%= number_to_currency(f) %></h1>
-      </div>
-      <div class="col-md-2 text-left my-auto">
-        <p class="stats"><%= number_to_currency(f-@rut_price) %></p>
-        <p class="stats"><%= (((f-@rut_price)/@rut_price)*100).round(2) %>%</p>
-      </div>
-      <div class="col-md-2 text-left my-auto">
-        <p class="stats"><%= number_to_currency((f-@rut_price)/@bull_put_spread.dte) %>/day</p>
-        <p class="stats-small">(approx. <%= (((f-@rut_price)/@rut_price)*100/@bull_put_spread.dte).round(2) %>%)</p>
-      </div>
+      <% unless f.nil? %>
+        <div class="col-md-6 text-right">
+          <h1 class="floor"><%= number_to_currency(f) %></h1>
+        </div>
+        <div class="col-md-2 text-left my-auto">
+          <p class="stats"><%= number_to_currency(f-@rut_price) %></p>
+          <p class="stats"><%= (((f-@rut_price)/@rut_price)*100).round(2) %>%</p>
+        </div>
+        <div class="col-md-2 text-left my-auto">
+          <p class="stats"><%= number_to_currency((f-@rut_price)/@bull_put_spread.dte) %>/day</p>
+          <p class="stats-small">(approx. <%= (((f-@rut_price)/@rut_price)*100/@bull_put_spread.dte).round(2) %>%)</p>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>
