@@ -11,6 +11,13 @@ class ShortPutsController < ApplicationController
   # GET /short_puts/1
   # GET /short_puts/1.json
   def show
+    @floors = [@short_put.floor1, @short_put.floor2, @short_put.strike]
+    @floor_names = ["Floor 1", "Floor 2", "Strike"]
+    if @short_put.asset == "FIVE"
+      @price = 125
+    else
+      @price = 29     # SKX
+    end
   end
 
   # GET /short_puts/new
@@ -39,7 +46,7 @@ class ShortPutsController < ApplicationController
   # PATCH/PUT /short_puts/1.json
   def update
     if @short_put.update(short_put_params)
-      flash[:sucess] = "Trade updated!"
+      flash[:success] = "Trade updated!"
       redirect_to @short_put
     end
   end
