@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_10_193907) do
+ActiveRecord::Schema.define(version: 2020_09_10_200108) do
 
   create_table "bull_put_spreads", force: :cascade do |t|
     t.decimal "floor1", precision: 8, scale: 2
@@ -41,9 +41,8 @@ ActiveRecord::Schema.define(version: 2020_09_10_193907) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "remember_created_at"
-    t.integer "reset_password_token"
+    t.index "\"reset_password_token\"", name: "index_users_on_reset_password_token"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
 
 end
