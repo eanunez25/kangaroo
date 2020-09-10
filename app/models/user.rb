@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :bull_put_spreads
+  has_many :short_puts
 
 end

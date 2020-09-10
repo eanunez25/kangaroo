@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :short_puts
   resources :bull_put_spreads
   devise_for :users
 
